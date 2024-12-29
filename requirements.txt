@@ -3,3 +3,4 @@ openai
 azure-identity
 langchain
 langchain-openai
+pre-commit

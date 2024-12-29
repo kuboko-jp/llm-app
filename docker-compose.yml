@@ -5,8 +5,7 @@ services:
     ports:
       - "8888:8888" # ホストの8888ポートとコンテナの8888ポートをマッピング
     volumes:
-      - ./app:/work/app    # ローカルのappディレクトリをコンテナの/appにマウント
-      - ./notebooks:/work/notebooks # ローカルのnotebooksディレクトリをコンテナの/notebooksにマウント
+      - ./:/work
       - ./jupyter_config:/root/.jupyter  # 追加: ホストの設定ディレクトリをコンテナの設定ディレクトリにマウント
     # environment: # 環境変数を設定する場合
     #   - OPENAI_API_KEY=${OPENAI_API_KEY}
