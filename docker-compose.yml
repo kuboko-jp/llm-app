@@ -1,0 +1,14 @@
+version: "3.9"  # バージョンを指定
+services:
+  jupyter:      # サービス名
+    build: .    # ビルドコンテキスト（Dockerfileのあるディレクトリ）
+    ports:
+      - "8888:8888" # ホストの8888ポートとコンテナの8888ポートをマッピング
+    volumes:
+      - ./app:/work/app    # ローカルのappディレクトリをコンテナの/appにマウント
+      - ./notebooks:/work/notebooks # ローカルのnotebooksディレクトリをコンテナの/notebooksにマウント
+      - ./jupyter_config:/root/.jupyter  # 追加: ホストの設定ディレクトリをコンテナの設定ディレクトリにマウント
+    # environment: # 環境変数を設定する場合
+    #   - OPENAI_API_KEY=${OPENAI_API_KEY}
+    # depends_on: # 他のサービスに依存する場合
+    #   - database

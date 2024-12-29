@@ -1,0 +1,5 @@
+jupyterlab
+openai
+azure-identity
+langchain
+langchain-openai
